@@ -1,0 +1,1833 @@
+/* Define spiritual color palette */
+:root {
+  --spiritual-saffron: #FF9933; /* Saffron for spirituality */
+  --spiritual-gold: #FFD700; /* Gold for divinity */
+  --spiritual-maroon: #800000; /* Deep maroon for devotion */
+  --spiritual-teal: #008080; /* Teal for calmness */
+  --spiritual-purple: #6A0DAD; /* Royal purple for divinity */
+  --spiritual-green: #388E3C; /* Green for life and growth */
+  --spiritual-blue: #1E90FF; /* Blue for peace and faith */
+}
+.sticky-toc {
+  position: fixed; /* Makes the element fixed on the page */
+  top: 20px; /* Distance from the top of the viewport */
+  right: 20px; /* Distance from the right of the viewport */
+  width: 250px; /* Set a fixed width */
+  background-color: #fff; /* Background color for better visibility */
+  border: 1px solid #ddd; /* Optional: Add a border */
+  border-radius: 8px; /* Optional: Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
+  padding: 15px; /* Add some padding */
+  z-index: 1000; /* Ensure it stays above other elements */
+  overflow-y: auto; /* Add scroll if content overflows */
+  max-height: 80vh; /* Prevent it from taking too much vertical space */
+}
+
+.sticky-toc h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.sticky-toc ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sticky-toc ul li {
+  margin-bottom: 8px;
+}
+
+.sticky-toc ul li a {
+  text-decoration: none;
+  color: #007bff; /* Link color */
+  font-size: 14px;
+}
+
+.sticky-toc ul li a:hover {
+  text-decoration: underline;
+  color: #0056b3; /* Hover color */
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #0c0c0c;
+  background-color: var(--spiritual-saffron);
+}
+
+.layout_padding {
+  padding: 75px 0;
+}
+
+.layout_padding2 {
+  padding: 45px 0;
+}
+
+.layout_padding2-top {
+  padding-top: 45px;
+}
+
+.layout_padding2-bottom {
+  padding-bottom: 45px;
+}
+
+.layout_padding-top {
+  padding-top: 75px;
+}
+
+.layout_padding-bottom {
+  padding-bottom: 75px;
+}
+
+.heading_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.heading_container h2 {
+  font-weight: bold;
+  color: #050000;
+  padding: 3px 10px;
+  border-bottom: 1px solid #000000;
+}
+
+/*header section*/
+.hero_area {
+  background-image: url('../images/hero-bg.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.sticky-toc {
+  position: sticky;
+  top: 20px; /* Distance from top of screen */
+  background: #fff;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.sticky-toc ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.sticky-toc li {
+  margin-bottom: 8px;
+}
+
+.sticky-toc a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.sticky-toc a:hover {
+  text-decoration: underline;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .hero_area {
+    height: auto; /* allow height to adjust to content */
+    min-height: 100vh; /* still fills screen if content is small */
+    padding: 40px 20px; /* more padding for small screens */
+    text-align: center; /* center content */
+  }
+}
+
+.sub_page .hero_area {
+  height: auto;
+}
+
+.header_section .container-fluid {
+  padding-right: 25px;
+  padding-left: 25px;
+}
+
+.header_section .nav_container {
+  margin: 0 auto;
+}
+
+.custom_nav-container.navbar-expand-lg .navbar-nav .nav-item .nav-link {
+  padding: 10px 30px;
+  color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: initial;
+}
+
+.btn,
+.btn:focus {
+  outline: none !important;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background-color: var(--spiritual-green);
+  color: #ffffff;
+  border: 1px solid var(--spiritual-green);
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background-color: transparent;
+  color: var(--spiritual-green);
+}
+
+.custom_nav-container .nav_search-btn {
+  background-image: url(../images/search-icon.png);
+  background-size: 22px;
+  background-repeat: no-repeat;
+  background-position-y: 7px;
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  border: none;
+}
+
+.navbar-brand {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar-brand img {
+  width: 20px;
+  margin-right: 5px;
+}
+
+.navbar-brand span {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--spiritual-purple);
+  text-transform: uppercase;
+}
+
+.custom_nav-container {
+  z-index: 99999;
+  padding: 15px 0;
+}
+
+.custom_nav-container .navbar-toggler {
+  outline: none;
+}
+
+.custom_nav-container .navbar-toggler .navbar-toggler-icon {
+  background-image: url(../images/menu.png);
+  background-size: 55px;
+}
+
+/*end header section*/
+/* slider section */
+.slider_section {
+  height: calc(100% - 80px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.slider_section .detail-box {
+  color: #ffffff;
+}
+
+.slider_section .detail-box h1 {
+  text-transform: uppercase;
+}
+
+.slider_section .detail-box h1 span {
+  color: #e93f1a;
+}
+
+.slider_section .detail-box p {
+  margin-top: 15px;
+}
+
+.slider_section .detail-box .btn-box {
+  margin-top: 45px;
+}
+
+.slider_section .detail-box .btn-box a {
+  display: inline-block;
+  padding: 10px 45px;
+  background-color: #e93f1a;
+  color: #ffffff;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.slider_section .detail-box .btn-box a:hover {
+  background-color: transparent;
+  border-color: #e93f1a;
+  color: #e93f1a;
+}
+
+.slider_section #carouselExampleIndicators {
+  width: 100%;
+}
+
+.slider_section .carousel-indicators {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #ffffff;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  left: initial;
+  width: 25px;
+  height: 200%;
+  margin: 0;
+  bottom: 50%;
+  right: 45px;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+}
+
+.slider_section .carousel-indicators::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1px;
+  height: 55%;
+  background-color: #ffffff;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.slider_section .carousel-indicators span {
+  margin: 0 2px;
+}
+
+.slider_section .carousel-indicators li {
+  text-indent: unset;
+  margin: 0;
+  border: none;
+  opacity: 1;
+  background-color: transparent;
+  width: auto;
+  height: auto;
+}
+
+.slider_section .carousel-indicators li.active {
+  color: #e93f1a;
+}
+
+.slider_section .custom_carousel-control {
+  position: absolute;
+  top: 50%;
+  left: 25px;
+  width: 105px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.slider_section .custom_carousel-control .carousel-control-prev,
+.slider_section .custom_carousel-control .carousel-control-next {
+  margin: 10px 0;
+  position: relative;
+  width: 45px;
+  height: 45px;
+  border: none;
+  opacity: 1;
+  background-repeat: no-repeat;
+  background-size: 8px;
+  background-position: center;
+  background-color: #e8e8e8;
+  border-radius: 100%;
+}
+
+.slider_section .custom_carousel-control .carousel-control-prev:hover,
+.slider_section .custom_carousel-control .carousel-control-next:hover {
+  background-color: #e93f1a;
+}
+
+.slider_section .custom_carousel-control .carousel-control-prev {
+  background-image: url(../images/prev.png);
+}
+
+.slider_section .custom_carousel-control .carousel-control-prev:hover {
+  background-image: url(../images/prev-white.png);
+}
+
+.slider_section .custom_carousel-control .carousel-control-next {
+  background-image: url(../images/next.png);
+}
+
+.slider_section .custom_carousel-control .carousel-control-next:hover {
+  background-image: url(../images/next-white.png);
+}
+
+/* end slider section */
+.about_section .img-box img {
+  width: 100%;
+}
+
+.about_section .detail-box a {
+  display: inline-block;
+  padding: 8px 35px;
+  background-color: #e93f1a;
+  color: #ffffff;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  margin-top: 25px;
+}
+
+.about_section .detail-box a:hover {
+  background-color: transparent;
+  border-color: #e93f1a;
+  color: #e93f1a;
+}
+
+.body_bg {
+  background-image: url(../images/body_bg.jpg);
+  background-size: cover;
+}
+
+.service_section .heading_container {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 25px;
+}
+
+.service_section .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin: 15px 0;
+  width: 85%;
+}
+
+.service_section .box h4 {
+  margin-top: 5px;
+}
+
+.service_section .box a {
+  padding: 6px 25px;
+  border: 1px solid #e93f1a;
+  color: #e93f1a;
+  text-transform: uppercase;
+}
+
+.quote_section .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.quote_section .box .btn-box a {
+  display: inline-block;
+  padding: 10px 55px;
+  background-color: #e93f1a;
+  color: #ffffff;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.quote_section .box .btn-box a:hover {
+  background-color: transparent;
+  border-color: #e93f1a;
+  color: #e93f1a;
+}
+
+.contact_section .contact_bg {
+  background-color: #ffffff;
+}
+
+.contact_section .heading_container {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 45px;
+}
+
+.contact_section .contact_form {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.contact_section .contact_form .top_input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.contact_section .contact_form .top_input input {
+  width: 48%;
+}
+
+.contact_section .contact_form input {
+  width: 100%;
+  margin: 15px 0;
+  height: 50px;
+  padding-left: 15px;
+  border: none;
+  outline: none;
+  background-color: #1c1b2d;
+  color: #ffffff;
+}
+
+.contact_section .contact_form input.message_input {
+  padding: 25px 0 90px 15px;
+}
+
+.contact_section .contact_form input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.contact_section .contact_form input:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.contact_section .contact_form input::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.contact_section .contact_form input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.contact_section .contact_form button {
+  display: inline-block;
+  padding: 8px 35px;
+  background-color: #e93f1a;
+  color: #ffffff;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  margin-top: 15px;
+  margin-bottom: 45px;
+}
+
+.contact_section .contact_form button:hover {
+  background-color: transparent;
+  border-color: #e93f1a;
+  color: #e93f1a;
+}
+
+.contact_section .img-box img {
+  width: 100%;
+}
+
+/* client_section */
+.client_section {
+  font-family: "Roboto", sans-serif;
+}
+
+.client_section .img-box {
+  min-width: 175px;
+  max-width: 175px;
+}
+
+.client_section .img-box img {
+  width: 100%;
+}
+
+.client_section .client_container {
+  width: 70%;
+  margin: auto;
+}
+
+.client_section .client-id {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.client_section .client_name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: right;
+  padding-left: 20px;
+}
+
+.client_section .client_name h3 {
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.client_section .client_name p {
+  color: #e93f1a;
+}
+
+.client_section .client_detail {
+  padding: 25px 45px;
+  background-color: #e93f1a;
+}
+
+.client_section .client_text p,
+.client_section .client_text blockquote {
+  margin: 0;
+  position: relative;
+  color: #fff;
+}
+
+.client_section .client_text blockquote::before,
+.client_section .client_text blockquote::after {
+  position: absolute;
+  font-family: "FontAwesome";
+  font-size: 20px;
+}
+
+.client_section .client_text blockquote::before {
+  content: "\f10d";
+  top: -6px;
+  left: -30px;
+}
+
+.client_section .client_text blockquote::after {
+  content: "\f10e";
+  bottom: -10px;
+  right: 5px;
+}
+
+.client_section .carousel-indicators {
+  bottom: -75px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.client_section .carousel-indicators li {
+  width: 15px;
+  height: 15px;
+  -webkit-box-sizing: unset;
+          box-sizing: unset;
+  background-color: #e93f1a;
+  opacity: 1;
+  border-radius: 100%;
+}
+
+.client_section .carousel-indicators li.active {
+  background-color: #000;
+}
+
+/* end client_section */
+.info_section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.info_section .footer_contact {
+  width: 350px;
+}
+
+.info_section .footer_contact .heading_container h2 {
+  width: 100%;
+  text-align: center;
+}
+
+.info_section .footer_contact .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 35px 20px 0 20px;
+}
+
+.info_section .footer_contact .box .img-box .img-2 {
+  display: none;
+}
+
+.info_section .footer_contact .box .img-box:hover .img-1 {
+  display: none;
+}
+
+.info_section .footer_contact .box .img-box:hover .img-2 {
+  display: inline;
+}
+
+/* footer section*/
+.footer_section {
+  font-weight: 500;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px;
+  background-color: var(--spiritual-maroon);
+  color: var(--spiritual-gold);
+}
+
+.footer_section p {
+  color: var(--spiritual-gold);
+}
+
+
+.scroll-left {
+ height: 100px;	
+ overflow: hidden;
+ position: relative;
+ /* background: yellow; */
+ color: #ffffff;
+ /* border: 1px solid orange; */
+}
+.scroll-left span {
+  position: absolute;
+  /* width: 100%;
+  height: 100%; */
+  margin: 0;
+  line-height: 50px;
+  white-space: nowrap;      /* ✨ Keeps text in one line */
+  /*display: inline-block;      ✅ Recommended with transforms */
+  transform: translateX(100%);
+  animation: scroll-left 15s linear infinite;
+}
+
+/* Move it (define the animation) */
+@keyframes scroll-left {
+ 0%   {
+ transform: translateX(100%); 		
+ }
+ 100% {
+ transform: translateX(-100%); 
+ }
+}
+.sidebar {
+  flex: 1;
+  background: var(--spiritual-teal);
+  color: #ffffff;
+  padding: 15px;
+  border-radius: 5px;
+}
+:root {
+  --primary-color: #005f73;
+  --secondary-color: #ca6702;
+  --highlight-color: #e93f1a;
+}
+
+.temple-name {
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+h2 {
+  font-size: 24px;
+  color: #005f73;
+  margin-bottom: 15px;
+}
+
+.highlight {
+  color: var(--spiritual-teal);
+  font-weight: bold;
+}
+
+.highlight-alt {
+  color: var(--spiritual-blue);
+  font-weight: bold;
+}
+
+.temple-name {
+  color: #ca6702;
+  font-weight: bold;
+}
+
+.deity {
+  color: #ae2012;
+  font-weight: bold;
+}
+.spiritual-significance {
+  background-color: var(--spiritual-gold);
+  color: var(--spiritual-maroon);
+  padding: 30px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.spiritual-significance h2 {
+  font-size: 24px;
+  color: var(--spiritual-purple);
+  margin-bottom: 15px;
+}
+
+.spiritual-significance ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #333;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.festival-name {
+  color: #ca6702;
+  font-weight: bold;
+}
+.char-dham-info {
+  background-color: #ffffff;
+  padding: 30px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  color: #333;
+  line-height: 1.8;
+  font-size: 18px;
+}
+
+.char-dham-info h2 {
+  font-size: 24px;
+  color: #6a040f;
+  margin-bottom: 15px;
+}
+
+.char-dham-info ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 15px;
+}
+
+.char-dham-info ul li {
+  margin-bottom: 10px;
+}
+
+.temple-name {
+  color: #ca6702;
+  font-weight: bold;
+}
+
+.highlight {
+  color: var(--spiritual-teal);
+  font-weight: bold;
+}
+
+.highlight-alt {
+  color: var(--spiritual-blue);
+  font-weight: bold;
+}
+
+.deity {
+  color: #ae2012;
+  font-weight: bold;
+}
+
+.festival-name {
+  color: #bb3e03;
+  font-weight: bold;
+}
+.section-heading {
+  color: var(--spiritual-purple);
+  font-size: 1.8em;
+  margin-bottom: 0.5em;
+}
+
+.king-name {
+  color: #4E342E; /* Earthy brown for kings */
+  font-weight: bold;
+}
+.sacred-term {
+  color: #DAA520; /* Goldenrod for holy terms */
+  font-weight: bold;
+}
+.architect {
+  color: #6D4C41; /* Warm earthy tone for Vishwakarma */
+  font-weight: bold;
+}
+.king {
+  color: #8B0000; /* Deep royal red */
+  font-weight: bold;
+}
+
+.dynasty {
+  color: #4B0082; /* Indigo for dynasty */
+  font-weight: bold;
+}
+
+.century {
+  color: #FF8C00; /* Historic golden orange */
+  font-weight: bold;
+}
+
+.religion {
+  color: #006400; /* Spiritual green */
+  font-weight: bold;
+}
+.ritual {
+  color: #6A1B9A; /* Spiritual purple */
+  font-weight: bold;
+}
+
+.material {
+  color: #2E7D32; /* Sacred neem green */
+  font-weight: bold;
+}
+
+.festival {
+  color: #D84315; /* Festival orange-red */
+  font-weight: bold;
+}
+
+.symbol {
+  color: #F57C00; /* Vibrant orange for highlight */
+  font-weight: bold;
+}
+.legacy {
+  color: #512DA8; /* Royal purple */
+  font-style: italic;
+  font-weight: bold;
+}
+.yatra {
+  color: #388E3C; /* Spiritual green */
+  font-weight: bold;
+}
+
+.architecture-style {
+  color: #1976D2; /* Architectural blue */
+  font-weight: bold;
+}
+.dynasty {
+  color: #6A1B9A; /* Noble purple */
+}
+
+.main-tower {
+  color: #FF8F00; /* Prominent amber for temple towers */
+}
+
+.hall-name {
+  color: #00897B; /* Teal for different halls */
+}
+
+.mahaprasad {
+  color: #C62828; /* Sacred red for food offerings */
+}
+
+.platform {
+  color: #2E7D32; /* Spiritual green for symbolic elevation */
+}
+.sacred-symbol {
+  color: #0288D1; /* Sky blue to represent divinity and sky connection */
+}
+
+.chakra-symbol {
+  color: #D32F2F; /* Bold red for divine weapon/symbol of power */
+}
+.temple-name {
+  color: #6A1B9A; /* Royal purple for sacred temple names */
+}
+.flag-name {
+  color: #C62828; /* Deep red to symbolize flag and tradition */
+  font-weight: bold;
+}
+.temple-feature {
+  color: #6A1B9A; /* Royal purple for highlighting temple-related terms */
+  font-weight: bold;
+}
+
+.highlight-fact {
+  color: #FF8F00; /* Amber to highlight mysterious or factual highlights */
+  font-weight: bold;
+}
+.temple-feature {
+  color: #6A1B9A; /* Royal purple for highlighting temple-related terms */
+  font-weight: bold;
+}
+.spiritual-text {
+  color: #444;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.feature-list {
+  padding-left: 1.2rem;
+  color: #333;
+  line-height: 1.6;
+}
+.mystery-subheading {
+  color: #4E342E; /* Earthy brown for mystical tone */
+  font-weight: bold;
+  margin-top: 1.5rem;
+  font-size: 1.3rem;
+}
+.section-title {
+  color: #4B0082;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-intro {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.highlight-text {
+  color: #800000;
+}
+
+.place-title {
+  color: #2E8B57;
+  font-size: 1.4rem;
+  margin-top: 1.2rem;
+}
+
+.place-description {
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.place-name {
+  color: #008080;
+  font-weight: bold;
+}
+
+.ritual-highlight {
+  color: #DAA520;
+  font-weight: bold;
+}
+
+.festival-name {
+  color: #DC143C;
+}
+
+.artist-name {
+  color: #4169E1;
+}
+
+.temple-name {
+  color: #8B0000;
+}
+
+.nickname {
+  color: #6A5ACD;
+  font-style: italic;
+}
+
+.architecture {
+  color: #006400;
+}
+
+.deity-names {
+  color: #A0522D;
+}
+/* Headings */
+.section-heading {
+  font-size: 1.8em;
+  margin-bottom: 0.5em;
+  color: #2e3d49;
+}
+
+.sub-heading {
+  font-size: 1.4em;
+  margin-top: 1.2em;
+  color: #1f4e79;
+}
+
+/* Paragraph Styles */
+.travel-intro {
+  color: #444;
+  font-size: 1.05em;
+  line-height: 1.6;
+}
+
+.travel-detail {
+  color: #555;
+  margin-bottom: 1em;
+}
+
+/* Highlight Classes */
+.train-title {
+  color: #0074D9; /* Train Blue */
+}
+
+.train-info {
+  border-left: 4px solid #0074D9;
+  padding-left: 10px;
+}
+
+.train-name {
+  font-style: italic;
+  color: #005fa3;
+}
+
+.temple-name {
+  color: #c0392b; /* Temple red */
+  font-weight: bold;
+}
+
+.station-name {
+  color: #2980b9;
+}
+
+.city-name {
+  color: #16a085;
+}
+
+.highlight-text {
+  color: #e67e22;
+}
+
+.festival-name {
+  color: #8e44ad;
+  font-weight: bold;
+}
+/* AIR */
+.air-title {
+  color: #3498db; /* Sky blue for air travel */
+}
+.air-info {
+  border-left: 4px solid #3498db;
+  padding-left: 10px;
+}
+.airport-name {
+  color: #2980b9;
+  font-weight: bold;
+}
+
+/* ROAD */
+.road-title {
+  color: #7f8c8d; /* Neutral gray for road travel */
+}
+.road-info {
+  border-left: 4px solid #7f8c8d;
+  padding-left: 10px;
+}
+.bus-name {
+  color: #2c3e50;
+  font-style: italic;
+}
+
+/* TIME TO VISIT */
+.time-title {
+  color: #e67e22; /* Orange for time-related info */
+}
+.time-info {
+  border-left: 4px solid #e67e22;
+  padding-left: 10px;
+}
+.season-text {
+  color: #d35400;
+}
+.season-title {
+  color: #8e44ad;
+}
+.festival-name {
+  color: #c0392b;
+  font-weight: bold;
+}
+
+/* General Reuse */
+.city-name {
+  color: #16a085;
+}
+.highlight-text {
+  color: #f39c12;
+}
+/* Final Tips Section */
+.tips-title {
+  color: #2c3e50; /* Classic dark tone */
+  margin-bottom: 10px;
+}
+
+.travel-tips-list {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.tips-item {
+  margin-bottom: 8px;
+  color: #34495e;
+  font-size: 16px;
+  list-style-type: disc;
+}
+
+.tips-item::marker {
+  color: #27ae60; /* Green icons/markers */
+}
+
+.festival-name {
+  color: #e74c3c; /* Red to highlight festivals */
+  font-weight: bold;
+}
+
+.temple-name {
+  color: #8e44ad; /* Purple for spiritual places */
+  font-weight: bold;
+}
+
+.travel-summary {
+  font-size: 16px;
+  color: #2d3436;
+  line-height: 1.6;
+}
+.travel-title {
+  font-size: 24px;
+  color: #2d3436;
+  margin-bottom: 15px;
+}
+
+.travel-intro {
+  font-size: 16px;
+  color: #34495e;
+  line-height: 1.6;
+}
+
+.temple-name {
+  color: #8e44ad; /* Spiritual purple */
+  font-weight: bold;
+}
+
+.highlight-keyword {
+  color: #2980b9; /* Calming blue for emphasis */
+  font-weight: bold;
+}
+
+.sub-heading {
+  color: #2c3e50;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.accommodation-summary {
+  color: #34495e;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.accommodation-list {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.accommodation-item {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #2f3640;
+  list-style-type: disc;
+}
+
+.stay-name {
+  color: #16a085; /* Fresh green-blue for hotel names */
+  font-style: italic;
+}
+
+.festival-name {
+  color: #e74c3c; /* Red to indicate festival/high-alert info */
+  font-weight: bold;
+}
+
+.accommodation-note {
+  color: #c0392b;
+  font-size: 15px;
+  font-style: italic;
+}
+.etiquette-title, .safety-title {
+  font-size: 20px;
+  color: #2c3e50;
+  margin-top: 30px;
+  margin-bottom: 12px;
+}
+
+.etiquette-intro, .safety-intro {
+  font-size: 16px;
+  color: #34495e;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.etiquette-list, .safety-list {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.etiquette-item, .safety-item {
+  margin-bottom: 10px;
+  font-size: 15.5px;
+  color: #2f3640;
+  list-style-type: disc;
+}
+
+.warning-text {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.safety-note {
+  font-size: 15px;
+  font-style: italic;
+  color: #c0392b;
+  margin-top: 10px;
+}
+.final-tips-title {
+  font-size: 20px;
+  color: #2c3e50;
+  margin-top: 30px;
+  margin-bottom: 12px;
+}
+
+.final-tips-list {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.final-tip-item {
+  margin-bottom: 10px;
+  font-size: 15.5px;
+  color: #2f3640;
+  list-style-type: disc;
+}
+
+.highlight-text {
+  color: #16a085;
+  font-weight: bold;
+}
+
+.final-tips-conclusion {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #34495e;
+  margin-top: 10px;
+}
+.temple-title {
+  color: #8B0000; /* Deep maroon for spiritual depth */
+}
+
+.temple-description {
+  color: #4B2E2E; /* Rich brown for a grounded, historical tone */
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.temple-highlight {
+  color: #D2691E; /* Saffron for sacred emphasis */
+  font-weight: bold;
+}
+.temple-name {
+  color: #B22222; /* Deep red for sacred names */
+  font-weight: bold;
+  font-style: italic;
+}
+
+.temple-subtitle {
+  color: #8B0000; /* Rich maroon for headings */
+  font-weight: bold;
+}
+
+.temple-description {
+  color: #4B2E2E; /* Warm earthy brown for readability */
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.temple-highlight {
+  color: #D2691E; /* Saffron for spiritual emphasis */
+  font-weight: bold;
+}
+
+.keyword-highlight {
+  color: #8A4B08; /* Traditional ochre tone for cultural terms */
+  font-weight: bold;
+}
+
+.mystery-highlight {
+  color: #005f73; /* Deep teal to emphasize the mysterious */
+  font-weight: bold;
+}
+
+.number-highlight {
+  color: #2E8B57; /* Emerald green for impactful numbers */
+  font-weight: bold;
+}
+
+.spiritual-highlight {
+  color: #6A0DAD; /* Royal purple for divine or spiritual beliefs */
+  font-weight: bold;
+}
+.temple-name {
+  color: #C71585; /* Magenta for temple and spiritual culture */
+  font-weight: bold;
+}
+
+.divine-offering {
+  color: #D2691E; /* Chocolate brown for sacred offerings */
+  font-weight: bold;
+}
+
+.highlight-location {
+  color: #1E90FF; /* Dodger blue for important places */
+  font-weight: bold;
+}
+
+.ritual-method {
+  color: #8B4513; /* Saddle brown for traditional cooking methods */
+  font-style: italic;
+}
+
+.spiritual-keyword {
+  color: #4CAF50; /* Green for blessings, health, moksha */
+  font-weight: bold;
+}
+
+.section-highlight {
+  color: #FF8C00; /* Dark orange for section titles */
+}
+
+.food-item {
+  color: #000080; /* Navy blue for food items */
+}
+.subtitle-purple {
+  color: #6a0dad; /* Royal purple for headings */
+}
+
+.temple-golden {
+  color: #DAA520; /* Goldenrod for temple mentions */
+}
+
+.ritual-orange {
+  color: #FF8C00; /* Dark orange for ritual counts */
+}
+
+.ritual-teal {
+  color: #008080; /* Teal for ritual names */
+  font-style: italic;
+}
+
+.darshan-indigo {
+  color: #4B0082; /* Indigo for darshan experiences */
+}
+
+.navakalevara-maroon {
+  color: #800000; /* Deep maroon for Navakalevara */
+}
+
+.vaishnav-green {
+  color: #228B22; /* Forest green for traditions */
+}
+
+.aarti-red {
+  color: #B22222; /* Firebrick red for aarti */
+}
+
+.festival-blue {
+  color: #1E90FF; /* Dodger blue for festivals */
+}
+
+.subtitle-gold {
+  color: #DAA520; /* Golden for sacred headings */
+}
+
+.puri-blue {
+  color: #1E90FF; /* Dodger blue for place name */
+}
+
+.scripture-purple {
+  color: #800080; /* Deep purple for scriptures */
+}
+
+.lord-highlight {
+  color: #4B0082; /* Indigo for Lord Jagannath */
+}
+
+.krishna-teal {
+  color: #008080; /* Teal for Krishna references */
+}
+
+.saint-maroon {
+  color: #800000; /* Maroon for saints */
+}
+
+.tradition-green {
+  color: #228B22; /* Forest green for traditions */
+}
+
+.bhakti-orange {
+  color: #FF8C00; /* Dark orange for bhakti */
+}
+
+.divine-glow {
+  color: #9400D3; /* Dark violet for divine energy */
+  font-weight: bold;
+}
+
+.lifechange-pink {
+  color: #C71585; /* Medium violet red for emotional impact */
+}
+.heading-glow {
+  color: var(--spiritual-purple);
+  text-shadow: 1px 1px 2px var(--spiritual-gold);
+}
+
+.puri-blue {
+  color: #1E90FF; /* Vibrant blue for Puri */
+}
+
+.state-earth {
+  color: #8B4513; /* Saddle brown for geographical location */
+}
+
+.char-dham-gold {
+  color: #DAA520; /* Golden for Char Dham */
+  font-weight: bold;
+}
+
+.devotee-purple {
+  color: #6A1B9A; /* Rich purple for Vaishnavites/devotees */
+}
+
+.vishnu-aura {
+  color: #4B0082; /* Indigo for Vishnu */
+}
+
+.krishna-teal {
+  color: #008080; /* Teal for Krishna references */
+}
+
+.title-glow {
+  color: #FF1493; /* Deep pink for divine titles */
+  font-style: italic;
+}
+
+.spiritual-spark {
+  color: #FF4500; /* Orange-red for emphasis */
+  font-weight: bold;
+}
+
+.saint-maroon {
+  color: #800000; /* Maroon for saints */
+}
+
+.sage-brown {
+  color: #A0522D; /* Sienna brown for sages */
+}
+.global-heading {
+  color: #00695C; /* Deep teal */
+  text-shadow: 1px 1px 2px #00ACC1; /* Cool blue glow */
+}
+
+.festival-red {
+  color: #D32F2F; /* Deep red for festival name */
+  font-weight: bold;
+}
+
+.puri-blue {
+  color: #1E90FF; /* Dodger blue for Puri */
+}
+
+.city-gold {
+  color: #FFD700; /* London - gold */
+}
+
+.city-silver {
+  color: #C0C0C0; /* New York - silver */
+}
+
+.city-sky {
+  color: #87CEEB; /* Sydney - sky blue */
+}
+
+.city-ruby {
+  color: #B22222; /* Moscow - firebrick ruby */
+}
+
+.iskcon-orange {
+  color: #FF8C00; /* ISKCON - deep orange */
+  font-weight: bold;
+}
+
+.spiritual-spark {
+  color: #FF4500; /* Orange-red for impact */
+  font-style: italic;
+}
+
+.media-gray {
+  color: #607D8B; /* Muted gray-blue for media */
+}
+
+.devotee-purple {
+  color: #6A1B9A; /* Spiritual purple */
+}
+
+.photo-green {
+  color: #388E3C; /* Green for nature-focused photographers */
+}
+
+.traveler-gold {
+  color: #FFA000; /* Amber gold for spiritual tourists */
+}
+
+.global-highlight {
+  color: #0288D1; /* Vibrant blue to show global emphasis */
+  font-weight: bold;
+}
+
+.heritage-bronze {
+  color: #CD7F32; /* Bronze tone for cultural heritage */
+}
+.chariot-heading {
+  color: #4A148C; /* Royal deep purple */
+  text-shadow: 1px 1px 2px #CE93D8;
+}
+
+.rath-maroon {
+  color: #880E4F; /* Deep maroon - symbolic of the Rath */
+}
+
+.puri-blue {
+  color: #1E88E5; /* Bright puri blue */
+}
+
+.devotion-gold {
+  color: #FFD700; /* Devotion - glowing gold */
+  font-weight: bold;
+}
+
+.blessed-green {
+  color: #2E7D32; /* Green for blessings and life */
+  font-style: italic;
+}
+
+.chant-orange {
+  color: #FF5722; /* High energy orange for chanting */
+  font-weight: bold;
+}
+
+.trance-purple {
+  color: #8E24AA; /* Mystical purple for trance/devotion */
+}
+
+.faith-blue {
+  color: #1976D2; /* Deep blue for faith */
+}
+
+.open-heart {
+  color: #009688; /* Teal for openness and universal love */
+}
+
+.unity-palette {
+  color: #5D4037; /* Earth tone for all kinds of people */
+  font-style: italic;
+}
+
+.diversity-color {
+  color: #FF7043; /* Warm coral to show vibrant unity */
+  font-weight: bold;
+}
+.chariot-structure-heading {
+  color: #BF360C;
+  text-shadow: 1px 1px 1px #FFAB91;
+}
+
+.rath-wood {
+  color: #6D4C41; /* Wood tone */
+  font-weight: bold;
+}
+
+.jagannath-highlight {
+  color: #C62828;
+  font-weight: bold;
+}
+
+.balabhadra-highlight {
+  color: #2E7D32;
+  font-weight: bold;
+}
+
+.subhadra-highlight {
+  color: #6A1B9A;
+  font-weight: bold;
+}
+
+.neem-green {
+  color: #388E3C;
+  font-style: italic;
+}
+
+.chariot-name {
+  font-weight: bold;
+}
+
+.nandighosha {
+  color: #EF5350;
+}
+
+.taladhwaja {
+  color: #43A047;
+}
+
+.darpadalan {
+  color: #8E24AA;
+}
+
+.chariot-red {
+  color: #D32F2F;
+}
+
+.chariot-yellow {
+  color: #FDD835;
+}
+
+.chariot-green {
+  color: #66BB6A;
+}
+
+.chariot-black {
+  color: #212121;
+}
+
+.route-highlight {
+  color: #0277BD;
+  font-weight: bold;
+}
+
+.craftsmen-color {
+  color: #795548;
+  font-style: italic;
+}
+
+.ritual-heading {
+  color: #4A148C;
+  text-shadow: 1px 1px 2px #CE93D8;
+}
+
+.pahandi-highlight {
+  color: #FF6F00;
+  font-weight: bold;
+}
+
+.ritual-sound {
+  color: #6D4C41;
+  font-style: italic;
+}
+
+.king-highlight {
+  color: #3E2723;
+  font-weight: bold;
+}
+
+.chera-highlight {
+  color: #FFD700;
+  font-style: italic;
+}
+
+.devotion-rope {
+  color: #5D4037;
+  font-weight: bold;
+}
+
+.gundicha-highlight {
+  color: #00695C;
+  font-weight: bold;
+}
+
+.bahuda-highlight {
+  color: #1565C0;
+  font-weight: bold;
+}
+.gundicha-highlight {
+  color: #00695C; /* Gundicha Temple green */
+  font-weight: bold;
+}
+
+.festival-highlight {
+  color: #D32F2F; /* Festival red */
+  font-weight: bold;
+}
+
+.moksha-highlight {
+  color: #388E3C; /* Moksha green */
+  font-weight: bold;
+}
+
+.festival-lib-highlight {
+  color: #8E24AA; /* Liberation purple */
+  font-weight: bold;
+}
+.highlight-orange {
+  color: #FF5733;
+}
+
+.highlight-red {
+  color: #C70039;
+}
+.highlight-green {
+  color: #28a745; /* Green */
+  font-weight: bold;
+}
+
+.highlight-orange {
+  color: #FF5733; /* Orange */
+  font-weight: bold;
+}
+
+.highlight-blue {
+  color: #007bff; /* Blue */
+  font-weight: bold;
+}
+
+.highlight-red {
+  color: #dc3545; /* Red */
+  font-weight: bold;
+}
+
+.highlight-purple {
+  color: #6f42c1; /* Purple */
+  font-weight: bold;
+}
+
+.highlight-yellow {
+  color: #ffc107; /* Yellow */
+  font-weight: bold;
+}
+
+.warning-text {
+  font-weight: bold;
+  color: #dc3545; /* Red for warning text */
+}
+
+/* end footer section*/
+/*# sourceMappingURL=style.css.map */

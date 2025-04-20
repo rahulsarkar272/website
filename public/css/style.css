@@ -1,0 +1,2715 @@
+/* Define spiritual color palette */
+:root {
+  /* Primary Colors */
+  --primary-saffron: #FF6B00; /* Vibrant saffron for primary elements */
+  --primary-gold: #FFD700; /* Gold for highlights and accents */
+  --primary-maroon: #800000; /* Deep maroon for headings */
+  --primary-teal: #008080; /* Teal for secondary elements */
+  --primary-purple: #6A0DAD; /* Royal purple for special elements */
+  --primary-green: #388E3C; /* Green for success and growth */
+  --primary-blue: #1E90FF; /* Blue for links and interactive elements */
+  
+  /* Neutral Colors */
+  --neutral-white: #FFFFFF;
+  --neutral-light: #F5F5F5;
+  --neutral-gray: #E0E0E0;
+  --neutral-medium: #9E9E9E;
+  --neutral-dark: #424242;
+  --neutral-black: #212121;
+  
+  /* Text Colors */
+  --text-primary: var(--neutral-black);
+  --text-secondary: var(--neutral-dark);
+  --text-muted: var(--neutral-medium);
+  --text-light: var(--neutral-light);
+  --text-white: var(--neutral-white);
+  
+  /* Semantic Colors */
+  --text-heading: var(--primary-maroon);
+  --text-highlight: var(--primary-gold);
+  --text-link: var(--primary-blue);
+  --text-success: var(--primary-green);
+  --text-warning: var(--primary-saffron);
+  --text-error: #DC3545;
+  
+  /* Background Colors */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F5F5F5;
+  --bg-dark: #212121;
+  --bg-overlay: rgba(0, 0, 0, 0.6);
+  
+  /* Typography */
+  --font-family-primary: 'Poppins', sans-serif;
+  --font-family-secondary: 'Poppins', sans-serif;
+  
+  /* Font Sizes */
+  --font-size-xs: 0.75rem;    /* 12px */
+  --font-size-sm: 0.875rem;   /* 14px */
+  --font-size-base: 1rem;     /* 16px */
+  --font-size-lg: 1.125rem;   /* 18px */
+  --font-size-xl: 1.25rem;    /* 20px */
+  --font-size-2xl: 1.5rem;    /* 24px */
+  --font-size-3xl: 1.875rem;  /* 30px */
+  --font-size-4xl: 2.25rem;   /* 36px */
+  
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.75rem;
+  --spacing-base: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+  
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-base: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-full: 9999px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-base: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  
+  /* Container */
+  --container-padding: 1rem;
+  --container-max-width: 1200px;
+
+  /* Line Heights */
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+}
+
+/* Base styles */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-primary);
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, 
+      #fff9f0 0%,
+      #fff5e6 25%,
+      #fff0e6 50%,
+      #ffe6e6 75%,
+      #ffe0e0 100%
+  );
+  color: #333;
+  line-height: var(--line-height-normal);
+  overflow-x: hidden;
+  position: relative;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/pattern.png');
+  background-repeat: repeat;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: var(--spacing-base);
+  line-height: 1.2;
+}
+
+h1 { font-size: var(--font-size-2xl); }
+h2 { font-size: var(--font-size-xl); }
+h3 { font-size: var(--font-size-lg); }
+h4 { font-size: var(--font-size-base); }
+h5 { font-size: var(--font-size-sm); }
+h6 { font-size: var(--font-size-xs); }
+
+/* Sticky Table of Contents */
+.sticky-toc {
+  position: sticky;
+  top: 20px;
+  background-color: var(--bg-primary);
+  padding: var(--spacing-base);
+  border-radius: var(--radius-base);
+  box-shadow: var(--shadow-base);
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.sticky-toc h2 {
+  font-size: var(--font-size-lg);
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-base);
+  padding-bottom: var(--spacing-xs);
+  border-bottom: 1px solid var(--neutral-gray);
+}
+
+.sticky-toc ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.sticky-toc ul li {
+  margin-bottom: var(--spacing-xs);
+}
+
+.sticky-toc ul li a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: var(--font-size-base);
+}
+
+.sticky-toc ul li a:hover {
+  color: var(--primary-saffron);
+}
+
+/* Layout spacing */
+.layout_padding {
+  padding: var(--spacing-xl) 0;
+}
+
+.layout_padding2 {
+  padding: var(--spacing-lg) 0;
+}
+
+.layout_padding2-top {
+  padding-top: var(--spacing-lg);
+}
+
+.layout_padding2-bottom {
+  padding-bottom: var(--spacing-lg);
+}
+
+.layout_padding-top {
+  padding-top: var(--spacing-xl);
+}
+
+.layout_padding-bottom {
+  padding-bottom: var(--spacing-xl);
+}
+
+/* Heading container */
+.heading_container {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.heading_container h2 {
+  font-weight: bold;
+  color: #050000;
+  padding: 3px 10px;
+  border-bottom: 1px solid #000000;
+  margin: 0;
+}
+
+/* Hero section */
+.hero_area {
+  position: relative;
+  height: 75vh;
+  min-height: 75vh;
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  background-image: linear-gradient(135deg, 
+      rgba(139, 0, 0, 0.9),  /* Deep maroon */
+      rgba(218, 165, 32, 0.8)  /* Golden */
+  ), url('../images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero_area::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, 
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.5)
+  );
+  z-index: -1;
+}
+
+.hero_content {
+  max-width: 800px;
+  padding: 0 20px;
+  animation: fadeInUp 1s ease-out;
+  position: relative;
+  z-index: 2;
+}
+
+.hero_title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: var(--primary-gold);
+  letter-spacing: 1px;
+}
+
+.hero_subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  line-height: 1.4;
+}
+
+.hero_buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.hero_button {
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero_button.primary {
+  background-color: var(--primary-gold);
+  color: var(--primary-maroon);
+  border: 2px solid var(--primary-gold);
+}
+
+.hero_button.primary:hover {
+  background-color: transparent;
+  color: var(--primary-gold);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hero_button.secondary {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid var(--primary-gold);
+}
+
+.hero_button.secondary:hover {
+  background-color: var(--primary-gold);
+  color: var(--primary-maroon);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: var(--primary-gold);
+  padding: 10px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  z-index: 3;
+}
+
+.scroll-left span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scroll-left 20s linear infinite;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 991px) {
+  .hero_area {
+    height: 65vh;
+    min-height: 65vh;
+    background-attachment: scroll;
+    background-image: linear-gradient(135deg, 
+        rgba(139, 0, 0, 0.95),
+        rgba(218, 165, 32, 0.85)
+    ), url('../images/hero-bg.jpg');
+  }
+  
+  .hero_title {
+    font-size: 3rem;
+  }
+  
+  .hero_subtitle {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero_area {
+    height: auto;
+    min-height: 100vh;
+    padding: 60px 20px;
+    background-attachment: scroll;
+    background-image: linear-gradient(135deg, 
+        rgba(139, 0, 0, 1),
+        rgba(218, 165, 32, 0.9)
+    ), url('../images/hero-bg.jpg');
+  }
+  
+  .hero_content {
+    padding: 0 15px;
+    width: 100%;
+  }
+  
+  .hero_title {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .hero_subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    padding: 0 10px;
+  }
+  
+  .hero_buttons {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .hero_button {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .scroll-left {
+    position: relative;
+    margin-top: 20px;
+  }
+  
+  .scroll-left span {
+    font-size: 0.85rem;
+    padding: 5px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero_area {
+    padding: 40px 15px;
+  }
+  
+  .hero_title {
+    font-size: 2rem;
+  }
+  
+  .hero_subtitle {
+    font-size: 1rem;
+  }
+  
+  .hero_button {
+    padding: 10px 15px;
+  }
+}
+
+/* Map container */
+.map-container {
+  position: relative;
+  width: 100%;
+  margin: var(--spacing-lg) 0;
+  border-radius: var(--radius-base);
+  overflow: hidden;
+  box-shadow: var(--shadow-base);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 450px;
+  border: 0;
+}
+
+/* Char Dham info sections */
+.char-dham-info {
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-base);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.char-dham-info h2 {
+  color: var(--primary-maroon);
+  margin-bottom: var(--spacing-base);
+  font-weight: var(--font-weight-bold);
+}
+
+.char-dham-info p {
+  margin-bottom: var(--spacing-base);
+  color: var(--text-secondary);
+}
+
+/* Utility classes */
+.highlight {
+  color: var(--text-highlight);
+  font-weight: 600;
+}
+
+.highlight-alt {
+  color: var(--primary-saffron);
+  font-weight: 600;
+}
+
+.temple-name {
+  color: var(--text-heading);
+  font-weight: 700;
+}
+
+.deity {
+  color: var(--primary-purple);
+  font-weight: 600;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .hero_area {
+    height: auto; /* allow height to adjust to content */
+    min-height: 100vh; /* still fills screen if content is small */
+    padding: 40px 20px; /* more padding for small screens */
+    text-align: center; /* center content */
+  }
+}
+
+.sub_page .hero_area {
+  height: auto;
+}
+
+/* Header section */
+.header_section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.header_section.scrolled {
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+}
+
+.header_section .container-fluid {
+  padding-right: 25px;
+  padding-left: 25px;
+}
+
+.header_section .nav_container {
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+.custom_nav-container.navbar-expand-lg .navbar-nav .nav-item .nav-link {
+  padding: 12px 24px;
+  color: var(--text-light);
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.custom_nav-container.navbar-expand-lg .navbar-nav .nav-item .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-gold);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.custom_nav-container.navbar-expand-lg .navbar-nav .nav-item .nav-link:hover::after,
+.custom_nav-container.navbar-expand-lg .navbar-nav .nav-item.active .nav-link::after {
+  width: 80%;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.navbar-brand img {
+  width: 32px;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover img {
+  transform: scale(1.1);
+}
+
+.navbar-brand span {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary-gold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.custom_nav-container {
+  padding: 15px 0;
+}
+
+.custom_nav-container .navbar-toggler {
+  outline: none;
+  border: none;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.custom_nav-container .navbar-toggler .navbar-toggler-icon {
+  background-image: none;
+  width: 24px;
+  height: 2px;
+  background-color: var(--text-light);
+  position: absolute;
+  left: 8px;
+  transition: all 0.3s ease;
+}
+
+.custom_nav-container .navbar-toggler .navbar-toggler-icon::before,
+.custom_nav-container .navbar-toggler .navbar-toggler-icon::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background-color: var(--text-light);
+  transition: all 0.3s ease;
+}
+
+.custom_nav-container .navbar-toggler .navbar-toggler-icon::before {
+  top: -8px;
+}
+
+.custom_nav-container .navbar-toggler .navbar-toggler-icon::after {
+  bottom: -8px;
+}
+
+.custom_nav-container .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  background-color: transparent;
+}
+
+.custom_nav-container .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.custom_nav-container .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.search-container {
+  position: relative;
+}
+
+.search-container .form-control {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text-light);
+  padding: 8px 40px 8px 16px;
+  border-radius: 24px;
+  transition: all 0.3s ease;
+}
+
+.search-container .form-control:focus {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: var(--primary-gold);
+  box-shadow: none;
+}
+
+.search-container .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.search-container .nav_search-btn {
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--text-light);
+  padding: 8px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.search-container .nav_search-btn:hover {
+  color: var(--primary-saffron);
+}
+
+/* Google Translator Styling */
+.translate-container {
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+}
+
+/* Google Translate Element Styling */
+.goog-te-gadget {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 13px !important;
+  color: var(--primary-gold) !important;
+}
+
+.goog-te-gadget-simple {
+  background-color: transparent !important;
+  border: 1px solid var(--primary-gold) !important;
+  padding: 6px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 32px !important;
+  height: 32px !important;
+  transition: all 0.3s ease !important;
+}
+
+.goog-te-gadget-simple:hover {
+  background-color: rgba(255, 215, 0, 0.1) !important;
+  border-color: var(--primary-saffron) !important;
+  transform: scale(1.05) !important;
+}
+
+.goog-te-menu-value {
+  color: var(--primary-gold) !important;
+  text-decoration: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.goog-te-menu-value:hover {
+  color: var(--primary-saffron) !important;
+}
+
+.goog-te-menu-value span {
+  display: none !important;
+}
+
+.goog-te-menu-value:before {
+  content: '🌐' !important;
+  font-size: 16px !important;
+  margin: 0 !important;
+}
+
+/* Hide Google Translate attribution */
+.goog-te-banner-frame,
+.goog-te-balloon-frame {
+  display: none !important;
+}
+
+/* Style the language selection dropdown */
+.goog-te-menu-frame {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  border-radius: 6px !important;
+  margin-top: 8px !important;
+}
+
+.goog-te-menu-frame .goog-te-menu2 {
+  background-color: var(--primary-maroon) !important;
+  border: 1px solid var(--primary-gold) !important;
+  padding: 6px !important;
+}
+
+.goog-te-menu-frame .goog-te-menu2-item {
+  color: var(--primary-gold) !important;
+  padding: 6px 10px !important;
+  border-radius: 4px !important;
+}
+
+.goog-te-menu-frame .goog-te-menu2-item:hover {
+  background-color: rgba(255, 215, 0, 0.1) !important;
+}
+
+.goog-te-menu-frame .goog-te-menu2-item-selected {
+  background-color: var(--primary-saffron) !important;
+  color: var(--primary-maroon) !important;
+}
+
+/* Responsive styles */
+@media (max-width: 991px) {
+  .translate-container {
+    margin: 8px 0;
+  }
+  
+  .goog-te-gadget-simple {
+    width: 30px !important;
+    height: 30px !important;
+  }
+  
+  .goog-te-menu-value:before {
+    font-size: 15px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .translate-container {
+    margin: 5px 0;
+  }
+  
+  .goog-te-gadget-simple {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  
+  .goog-te-menu-value:before {
+    font-size: 14px !important;
+  }
+}
+
+/* end header section*/
+/* slider section */
+.slider_section {
+  height: calc(100% - 80px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.slider_section .detail-box {
+  color: #ffffff;
+}
+
+.slider_section .detail-box h1 {
+  text-transform: uppercase;
+}
+
+.slider_section .detail-box h1 span {
+  color: #e93f1a;
+}
+
+.slider_section .detail-box p {
+  margin-top: 15px;
+}
+
+.slider_section .detail-box .btn-box {
+  margin-top: 45px;
+}
+
+.slider_section .detail-box .btn-box a {
+  display: inline-block;
+  padding: 10px 45px;
+  background-color: #e93f1a;
+  color: #ffffff;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.slider_section .detail-box .btn-box a:hover {
+  background-color: transparent;
+  border-color: #e93f1a;
+  color: #e93f1a;
+}
+
+.slider_section #carouselExampleIndicators {
+  width: 100%;
+}
+
+.slider_section .carousel-indicators {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #ffffff;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  left: initial;
+  width: 25px;
+  height: 200%;
+  margin: 0;
+  bottom: 50%;
+  right: 45px;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+}
+
+.slider_section .carousel-indicators::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1px;
+  height: 55%;
+  background-color: #ffffff;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.slider_section .carousel-indicators span {
+  margin: 0 2px;
+}
+
+.slider_section .carousel-indicators li {
+  text-indent: unset;
+  margin: 0;
+  border: none;
+  opacity: 1;
+  background-color: transparent;
+  width: auto;
+  height: auto;
+}
+
+.slider_section .carousel-indicators li.active {
+  color: #e93f1a;
+}
+
+.slider_section .custom_carousel-control {
+  position: absolute;
+  top: 50%;
+  left: 25px;
+  width: 105px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.slider_section .custom_carousel-control .carousel-control-prev,
+.slider_section .custom_carousel-control .carousel-control-next {
+  margin: 10px 0;
+  position: relative;
+  width: 45px;
+  height: 45px;
+  border: none;
+  opacity: 1;
+  background-repeat: no-repeat;
+  background-size: 8px;
+  background-position: center;
+  background-color: #e8e8e8;
+  border-radius: 100%;
+}
+
+.slider_section .custom_carousel-control .carousel-control-prev:hover,
+.slider_section .custom_carousel-control .carousel-control-next:hover {
+  background-color: #e93f1a;
+}
+
+.slider_section .custom_carousel-control .carousel-control-prev {
+  background-image: url(../images/prev.png);
+}
+
+.slider_section .custom_carousel-control .carousel-control-prev:hover {
+  background-image: url(../images/prev-white.png);
+}
+
+.slider_section .custom_carousel-control .carousel-control-next {
+  background-image: url(../images/next.png);
+}
+
+.slider_section .custom_carousel-control .carousel-control-next:hover {
+  background-image: url(../images/next-white.png);
+}
+
+/* end slider section */
+.about_section .img-box img {
+  width: 100%;
+}
+
+.about_section .detail-box a {
+  display: inline-block;
+  padding: 8px 35px;
+  background-color: #e93f1a;
+  color: #ffffff;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  margin-top: 25px;
+}
+
+.about_section .detail-box a:hover {
+  background-color: transparent;
+  border-color: #e93f1a;
+  color: #e93f1a;
+}
+
+.body_bg {
+  background-image: url(../images/body_bg.jpg);
+  background-size: cover;
+}
+
+.service_section .heading_container {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 25px;
+}
+
+.service_section .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin: 15px 0;
+  width: 85%;
+}
+
+.service_section .box h4 {
+  margin-top: 5px;
+}
+
+.service_section .box a {
+  padding: 6px 25px;
+  border: 1px solid #e93f1a;
+  color: #e93f1a;
+  text-transform: uppercase;
+}
+
+.quote_section .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.quote_section .box .btn-box a {
+  display: inline-block;
+  padding: 10px 55px;
+  background-color: #e93f1a;
+  color: #ffffff;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.quote_section .box .btn-box a:hover {
+  background-color: transparent;
+  border-color: #e93f1a;
+  color: #e93f1a;
+}
+
+.contact_section .contact_bg {
+  background-color: #ffffff;
+}
+
+.contact_section .heading_container {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 45px;
+}
+
+.contact_section .contact_form {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.contact_section .contact_form .top_input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.contact_section .contact_form .top_input input {
+  width: 48%;
+}
+
+.contact_section .contact_form input {
+  width: 100%;
+  margin: 15px 0;
+  height: 50px;
+  padding-left: 15px;
+  border: none;
+  outline: none;
+  background-color: #1c1b2d;
+  color: #ffffff;
+}
+
+.contact_section .contact_form input.message_input {
+  padding: 25px 0 90px 15px;
+}
+
+.contact_section .contact_form input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.contact_section .contact_form input:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.contact_section .contact_form input::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.contact_section .contact_form input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.contact_section .contact_form button {
+  display: inline-block;
+  padding: 8px 35px;
+  background-color: #e93f1a;
+  color: #ffffff;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  margin-top: 15px;
+  margin-bottom: 45px;
+}
+
+.contact_section .contact_form button:hover {
+  background-color: transparent;
+  border-color: #e93f1a;
+  color: #e93f1a;
+}
+
+.contact_section .img-box img {
+  width: 100%;
+}
+
+/* client_section */
+.client_section {
+  font-family: "Roboto", sans-serif;
+}
+
+.client_section .img-box {
+  min-width: 175px;
+  max-width: 175px;
+}
+
+.client_section .img-box img {
+  width: 100%;
+}
+
+.client_section .client_container {
+  width: 70%;
+  margin: auto;
+}
+
+.client_section .client-id {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.client_section .client_name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: right;
+  padding-left: 20px;
+}
+
+.client_section .client_name h3 {
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.client_section .client_name p {
+  color: #e93f1a;
+}
+
+.client_section .client_detail {
+  padding: 25px 45px;
+  background-color: #e93f1a;
+}
+
+.client_section .client_text p,
+.client_section .client_text blockquote {
+  margin: 0;
+  position: relative;
+  color: #fff;
+}
+
+.client_section .client_text blockquote::before,
+.client_section .client_text blockquote::after {
+  position: absolute;
+  font-family: "FontAwesome";
+  font-size: 20px;
+}
+
+.client_section .client_text blockquote::before {
+  content: "\f10d";
+  top: -6px;
+  left: -30px;
+}
+
+.client_section .client_text blockquote::after {
+  content: "\f10e";
+  bottom: -10px;
+  right: 5px;
+}
+
+.client_section .carousel-indicators {
+  bottom: -75px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.client_section .carousel-indicators li {
+  width: 15px;
+  height: 15px;
+  -webkit-box-sizing: unset;
+          box-sizing: unset;
+  background-color: #e93f1a;
+  opacity: 1;
+  border-radius: 100%;
+}
+
+.client_section .carousel-indicators li.active {
+  background-color: #000;
+}
+
+/* end client_section */
+.info_section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.info_section .footer_contact {
+  width: 350px;
+}
+
+.info_section .footer_contact .heading_container h2 {
+  width: 100%;
+  text-align: center;
+}
+
+.info_section .footer_contact .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 35px 20px 0 20px;
+}
+
+.info_section .footer_contact .box .img-box .img-2 {
+  display: none;
+}
+
+.info_section .footer_contact .box .img-box:hover .img-1 {
+  display: none;
+}
+
+.info_section .footer_contact .box .img-box:hover .img-2 {
+  display: inline;
+}
+
+/* footer section*/
+.footer_section {
+  background: linear-gradient(135deg, 
+      rgba(139, 0, 0, 0.95),  /* Deep maroon */
+      rgba(218, 165, 32, 0.85)  /* Golden */
+  );
+  padding: 60px 0 20px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer_section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/pattern.png');
+  background-repeat: repeat;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.footer_section h4 {
+  color: #FFD700;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  position: relative;
+  padding-bottom: 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.footer_section h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: #FFD700;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.footer_section p {
+  color: #fff;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  position: relative;
+  padding-left: 15px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.footer-links a::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #FFD700;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #FFD700;
+  transform: translateX(5px);
+}
+
+.footer-contact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-contact li {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.footer-contact li i {
+  color: #FFD700;
+  margin-right: 10px;
+  font-size: 1.1rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-icon {
+  color: #fff;
+  background-color: rgba(139, 0, 0, 0.5);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.social-icon:hover {
+  background-color: #FFD700;
+  color: #8B0000;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 215, 0, 0.2);
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: #fff;
+  margin: 5px 0;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.disclaimer {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 768px) {
+  .footer_section {
+    padding: 40px 0 20px;
+  }
+  
+  .footer_section .col-md-4 {
+    margin-bottom: 30px;
+  }
+  
+  .footer-bottom {
+    margin-top: 20px;
+  }
+}
+
+.sidebar {
+  flex: 1;
+  background: var(--primary-teal);
+  color: #ffffff;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.temple-name {
+  color: var(--primary-maroon);
+  font-weight: bold;
+}
+h2 {
+  font-size: 24px;
+  color: var(--primary-maroon);
+  margin-bottom: 15px;
+}
+
+.highlight {
+  color: var(--primary-teal);
+  font-weight: bold;
+}
+
+.highlight-alt {
+  color: var(--primary-blue);
+  font-weight: bold;
+}
+
+.temple-name {
+  color: var(--primary-maroon);
+  font-weight: bold;
+}
+
+.deity {
+  color: var(--primary-purple);
+  font-weight: bold;
+}
+.spiritual-significance {
+  background-color: var(--primary-gold);
+  color: var(--primary-maroon);
+  padding: 30px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.spiritual-significance h2 {
+  font-size: 24px;
+  color: var(--primary-purple);
+  margin-bottom: 15px;
+}
+
+.spiritual-significance ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #333;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.festival-name {
+  color: var(--primary-maroon);
+  font-weight: bold;
+}
+.char-dham-info {
+  background-color: #ffffff;
+  padding: 30px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  color: #333;
+  line-height: 1.8;
+  font-size: 18px;
+}
+
+.char-dham-info h2 {
+  font-size: 24px;
+  color: #6a040f;
+  margin-bottom: 15px;
+}
+
+.char-dham-info ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 15px;
+}
+
+.char-dham-info ul li {
+  margin-bottom: 10px;
+}
+
+.temple-name {
+  color: var(--primary-maroon);
+  font-weight: bold;
+}
+
+.highlight {
+  color: var(--primary-teal);
+  font-weight: bold;
+}
+
+.highlight-alt {
+  color: var(--primary-blue);
+  font-weight: bold;
+}
+
+.deity {
+  color: var(--primary-purple);
+  font-weight: bold;
+}
+
+.festival-name {
+  color: var(--primary-maroon);
+  font-weight: bold;
+}
+.section-heading {
+  color: var(--primary-purple);
+  font-size: 1.8em;
+  margin-bottom: 0.5em;
+}
+
+.king-name {
+  color: #4E342E; /* Earthy brown for kings */
+  font-weight: bold;
+}
+.sacred-term {
+  color: #DAA520; /* Goldenrod for holy terms */
+  font-weight: bold;
+}
+.architect {
+  color: #6D4C41; /* Warm earthy tone for Vishwakarma */
+  font-weight: bold;
+}
+.king {
+  color: #8B0000; /* Deep royal red */
+  font-weight: bold;
+}
+
+.dynasty {
+  color: #4B0082; /* Indigo for dynasty */
+  font-weight: bold;
+}
+
+.century {
+  color: #FF8C00; /* Historic golden orange */
+  font-weight: bold;
+}
+
+.religion {
+  color: #006400; /* Spiritual green */
+  font-weight: bold;
+}
+.ritual {
+  color: #6A1B9A; /* Spiritual purple */
+  font-weight: bold;
+}
+
+.material {
+  color: #2E7D32; /* Sacred neem green */
+  font-weight: bold;
+}
+
+.festival {
+  color: #D84315; /* Festival orange-red */
+  font-weight: bold;
+}
+
+.symbol {
+  color: #F57C00; /* Vibrant orange for highlight */
+  font-weight: bold;
+}
+.legacy {
+  color: #512DA8; /* Royal purple */
+  font-style: italic;
+  font-weight: bold;
+}
+.yatra {
+  color: #388E3C; /* Spiritual green */
+  font-weight: bold;
+}
+
+.architecture-style {
+  color: #1976D2; /* Architectural blue */
+  font-weight: bold;
+}
+.dynasty {
+  color: #6A1B9A; /* Noble purple */
+}
+
+.main-tower {
+  color: #FF8F00; /* Prominent amber for temple towers */
+}
+
+.hall-name {
+  color: #00897B; /* Teal for different halls */
+}
+
+.mahaprasad {
+  color: #C62828; /* Sacred red for food offerings */
+}
+
+.platform {
+  color: #2E7D32; /* Spiritual green for symbolic elevation */
+}
+.sacred-symbol {
+  color: #0288D1; /* Sky blue to represent divinity and sky connection */
+}
+
+.chakra-symbol {
+  color: #D32F2F; /* Bold red for divine weapon/symbol of power */
+}
+.temple-name {
+  color: var(--primary-purple);
+  font-weight: bold;
+}
+.flag-name {
+  color: #C62828; /* Deep red to symbolize flag and tradition */
+  font-weight: bold;
+}
+.temple-feature {
+  color: var(--primary-purple);
+  font-weight: bold;
+}
+
+.highlight-fact {
+  color: #FF8F00; /* Amber to highlight mysterious or factual highlights */
+  font-weight: bold;
+}
+.temple-feature {
+  color: var(--primary-purple);
+  font-weight: bold;
+}
+.spiritual-text {
+  color: #444;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.feature-list {
+  padding-left: 1.2rem;
+  color: #333;
+  line-height: 1.6;
+}
+.mystery-subheading {
+  color: #4E342E; /* Earthy brown for mystical tone */
+  font-weight: bold;
+  margin-top: 1.5rem;
+  font-size: 1.3rem;
+}
+.section-title {
+  color: #4B0082;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-intro {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.highlight-text {
+  color: var(--text-heading);
+  font-weight: 600;
+}
+
+.place-title {
+  color: var(--primary-green);
+  font-size: 1.4rem;
+  margin-top: 1.2rem;
+}
+
+.place-description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.place-name {
+  color: #008080;
+  font-weight: bold;
+}
+
+.ritual-highlight {
+  color: #DAA520;
+  font-weight: bold;
+}
+
+.festival-name {
+  color: #DC143C;
+}
+
+.artist-name {
+  color: #4169E1;
+}
+
+.temple-name {
+  color: #8B0000;
+}
+
+.nickname {
+  color: #6A5ACD;
+  font-style: italic;
+}
+
+.architecture {
+  color: #006400;
+}
+
+.deity-names {
+  color: #A0522D;
+}
+/* Headings */
+.section-heading {
+  font-size: 1.8em;
+  margin-bottom: 0.5em;
+  color: var(--primary-purple);
+}
+
+.sub-heading {
+  font-size: 1.4em;
+  margin-top: 1.2em;
+  color: #1f4e79;
+}
+
+/* Paragraph Styles */
+.travel-intro {
+  color: #444;
+  font-size: 1.05em;
+  line-height: 1.6;
+}
+
+.travel-detail {
+  color: #555;
+  margin-bottom: 1em;
+}
+
+/* Highlight Classes */
+.train-title {
+  color: #0074D9; /* Train Blue */
+}
+
+.train-info {
+  border-left: 4px solid #0074D9;
+  padding-left: 10px;
+}
+
+.train-name {
+  font-style: italic;
+  color: #005fa3;
+}
+
+.temple-name {
+  color: #c0392b; /* Temple red */
+  font-weight: bold;
+}
+
+.station-name {
+  color: #2980b9;
+}
+
+.city-name {
+  color: #16a085;
+}
+
+.festival-name {
+  color: #8e44ad;
+  font-weight: bold;
+}
+/* AIR */
+.air-title {
+  color: #3498db; /* Sky blue for air travel */
+}
+.air-info {
+  border-left: 4px solid #3498db;
+  padding-left: 10px;
+}
+.airport-name {
+  color: #2980b9;
+  font-weight: bold;
+}
+
+/* ROAD */
+.road-title {
+  color: #7f8c8d; /* Neutral gray for road travel */
+}
+.road-info {
+  border-left: 4px solid #7f8c8d;
+  padding-left: 10px;
+}
+.bus-name {
+  color: #2c3e50;
+  font-style: italic;
+}
+
+/* TIME TO VISIT */
+.time-title {
+  color: #e67e22; /* Orange for time-related info */
+}
+.time-info {
+  border-left: 4px solid #e67e22;
+  padding-left: 10px;
+}
+.season-text {
+  color: #d35400;
+}
+.season-title {
+  color: #8e44ad;
+}
+.festival-name {
+  color: #c0392b;
+  font-weight: bold;
+}
+
+/* General Reuse */
+.city-name {
+  color: #16a085;
+}
+.highlight-text {
+  color: #f39c12;
+}
+/* Final Tips Section */
+.tips-title {
+  color: #2c3e50; /* Classic dark tone */
+  margin-bottom: 10px;
+}
+
+.travel-tips-list {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.tips-item {
+  margin-bottom: 8px;
+  color: #34495e;
+  font-size: 16px;
+  list-style-type: disc;
+}
+
+.tips-item::marker {
+  color: #27ae60; /* Green icons/markers */
+}
+
+.festival-name {
+  color: #e74c3c; /* Red to highlight festivals */
+  font-weight: bold;
+}
+
+.temple-name {
+  color: #8e44ad; /* Purple for spiritual places */
+  font-weight: bold;
+}
+
+.travel-summary {
+  font-size: 16px;
+  color: #2d3436;
+  line-height: 1.6;
+}
+.travel-title {
+  font-size: 24px;
+  color: #2d3436;
+  margin-bottom: 15px;
+}
+
+.travel-intro {
+  font-size: 16px;
+  color: #34495e;
+  line-height: 1.6;
+}
+
+.temple-name {
+  color: #8e44ad; /* Spiritual purple */
+  font-weight: bold;
+}
+
+.highlight-keyword {
+  color: #2980b9; /* Calming blue for emphasis */
+  font-weight: bold;
+}
+
+.sub-heading {
+  color: #2c3e50;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.accommodation-summary {
+  color: #34495e;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.accommodation-list {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.accommodation-item {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #2f3640;
+  list-style-type: disc;
+}
+
+.stay-name {
+  color: #16a085; /* Fresh green-blue for hotel names */
+  font-style: italic;
+}
+
+.festival-name {
+  color: #e74c3c; /* Red to indicate festival/high-alert info */
+  font-weight: bold;
+}
+
+.accommodation-note {
+  color: #c0392b;
+  font-size: 15px;
+  font-style: italic;
+}
+.etiquette-title, .safety-title {
+  font-size: 20px;
+  color: #2c3e50;
+  margin-top: 30px;
+  margin-bottom: 12px;
+}
+
+.etiquette-intro, .safety-intro {
+  font-size: 16px;
+  color: #34495e;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.etiquette-list, .safety-list {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.etiquette-item, .safety-item {
+  margin-bottom: 10px;
+  font-size: 15.5px;
+  color: #2f3640;
+  list-style-type: disc;
+}
+
+.warning-text {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.safety-note {
+  font-size: 15px;
+  font-style: italic;
+  color: #c0392b;
+  margin-top: 10px;
+}
+.final-tips-title {
+  font-size: 20px;
+  color: #2c3e50;
+  margin-top: 30px;
+  margin-bottom: 12px;
+}
+
+.final-tips-list {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.final-tip-item {
+  margin-bottom: 10px;
+  font-size: 15.5px;
+  color: #2f3640;
+  list-style-type: disc;
+}
+
+.highlight-text {
+  color: #16a085;
+  font-weight: bold;
+}
+
+.final-tips-conclusion {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #34495e;
+  margin-top: 10px;
+}
+.temple-title {
+  color: #8B0000; /* Deep maroon for spiritual depth */
+}
+
+.temple-description {
+  color: #4B2E2E; /* Rich brown for a grounded, historical tone */
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.temple-highlight {
+  color: #D2691E; /* Saffron for sacred emphasis */
+  font-weight: bold;
+}
+.temple-name {
+  color: #B22222; /* Deep red for sacred names */
+  font-weight: bold;
+  font-style: italic;
+}
+
+.temple-subtitle {
+  color: #8B0000; /* Rich maroon for headings */
+  font-weight: bold;
+}
+
+.temple-description {
+  color: #4B2E2E; /* Warm earthy brown for readability */
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.temple-highlight {
+  color: #D2691E; /* Saffron for spiritual emphasis */
+  font-weight: bold;
+}
+
+.keyword-highlight {
+  color: #8A4B08; /* Traditional ochre tone for cultural terms */
+  font-weight: bold;
+}
+
+.mystery-highlight {
+  color: #005f73; /* Deep teal to emphasize the mysterious */
+  font-weight: bold;
+}
+
+.number-highlight {
+  color: #2E8B57; /* Emerald green for impactful numbers */
+  font-weight: bold;
+}
+
+.spiritual-highlight {
+  color: #6A0DAD; /* Royal purple for divine or spiritual beliefs */
+  font-weight: bold;
+}
+.temple-name {
+  color: #C71585; /* Magenta for temple and spiritual culture */
+  font-weight: bold;
+}
+
+.divine-offering {
+  color: #D2691E; /* Chocolate brown for sacred offerings */
+  font-weight: bold;
+}
+
+.highlight-location {
+  color: #1E90FF; /* Dodger blue for important places */
+  font-weight: bold;
+}
+
+.ritual-method {
+  color: #8B4513; /* Saddle brown for traditional cooking methods */
+  font-style: italic;
+}
+
+.spiritual-keyword {
+  color: #4CAF50; /* Green for blessings, health, moksha */
+  font-weight: bold;
+}
+
+.section-highlight {
+  color: #FF8C00; /* Dark orange for section titles */
+}
+
+.food-item {
+  color: #000080; /* Navy blue for food items */
+}
+.subtitle-purple {
+  color: #6a0dad; /* Royal purple for headings */
+}
+
+.temple-golden {
+  color: #DAA520; /* Goldenrod for temple mentions */
+}
+
+.ritual-orange {
+  color: #FF8C00; /* Dark orange for ritual counts */
+}
+
+.ritual-teal {
+  color: #008080; /* Teal for ritual names */
+  font-style: italic;
+}
+
+.darshan-indigo {
+  color: #4B0082; /* Indigo for darshan experiences */
+}
+
+.navakalevara-maroon {
+  color: #800000; /* Deep maroon for Navakalevara */
+}
+
+.vaishnav-green {
+  color: #228B22; /* Forest green for traditions */
+}
+
+.aarti-red {
+  color: #B22222; /* Firebrick red for aarti */
+}
+
+.festival-blue {
+  color: #1E90FF; /* Dodger blue for festivals */
+}
+
+.subtitle-gold {
+  color: #DAA520; /* Golden for sacred headings */
+}
+
+.puri-blue {
+  color: #1E90FF; /* Dodger blue for place name */
+}
+
+.scripture-purple {
+  color: #800080; /* Deep purple for scriptures */
+}
+
+.lord-highlight {
+  color: #4B0082; /* Indigo for Lord Jagannath */
+}
+
+.krishna-teal {
+  color: #008080; /* Teal for Krishna references */
+}
+
+.saint-maroon {
+  color: #800000; /* Maroon for saints */
+}
+
+.tradition-green {
+  color: #228B22; /* Forest green for traditions */
+}
+
+.bhakti-orange {
+  color: #FF8C00; /* Dark orange for bhakti */
+}
+
+.divine-glow {
+  color: #9400D3; /* Dark violet for divine energy */
+  font-weight: bold;
+}
+
+.lifechange-pink {
+  color: #C71585; /* Medium violet red for emotional impact */
+}
+.heading-glow {
+  color: var(--primary-purple);
+  text-shadow: 1px 1px 2px var(--primary-gold);
+}
+
+.puri-blue {
+  color: #1E90FF; /* Vibrant blue for Puri */
+}
+
+.state-earth {
+  color: #8B4513; /* Saddle brown for geographical location */
+}
+
+.char-dham-gold {
+  color: #DAA520; /* Golden for Char Dham */
+  font-weight: bold;
+}
+
+.devotee-purple {
+  color: #6A1B9A; /* Rich purple for Vaishnavites/devotees */
+}
+
+.vishnu-aura {
+  color: #4B0082; /* Indigo for Vishnu */
+}
+
+.krishna-teal {
+  color: #008080; /* Teal for Krishna references */
+}
+
+.title-glow {
+  color: #FF1493; /* Deep pink for divine titles */
+  font-style: italic;
+}
+
+.spiritual-spark {
+  color: #FF4500; /* Orange-red for emphasis */
+  font-weight: bold;
+}
+
+.saint-maroon {
+  color: #800000; /* Maroon for saints */
+}
+
+.sage-brown {
+  color: #A0522D; /* Sienna brown for sages */
+}
+.global-heading {
+  color: #00695C; /* Deep teal */
+  text-shadow: 1px 1px 2px #00ACC1; /* Cool blue glow */
+}
+
+.festival-red {
+  color: #D32F2F; /* Deep red for festival name */
+  font-weight: bold;
+}
+
+.puri-blue {
+  color: #1E90FF; /* Dodger blue for Puri */
+}
+
+.city-gold {
+  color: #FFD700; /* London - gold */
+}
+
+.city-silver {
+  color: #C0C0C0; /* New York - silver */
+}
+
+.city-sky {
+  color: #87CEEB; /* Sydney - sky blue */
+}
+
+.city-ruby {
+  color: #B22222; /* Moscow - firebrick ruby */
+}
+
+.iskcon-orange {
+  color: #FF8C00; /* ISKCON - deep orange */
+  font-weight: bold;
+}
+
+.spiritual-spark {
+  color: #FF4500; /* Orange-red for impact */
+  font-style: italic;
+}
+
+.media-gray {
+  color: #607D8B; /* Muted gray-blue for media */
+}
+
+.devotee-purple {
+  color: #6A1B9A; /* Spiritual purple */
+}
+
+.photo-green {
+  color: #388E3C; /* Green for nature-focused photographers */
+}
+
+.traveler-gold {
+  color: #FFA000; /* Amber gold for spiritual tourists */
+}
+
+.global-highlight {
+  color: #0288D1; /* Vibrant blue to show global emphasis */
+  font-weight: bold;
+}
+
+.heritage-bronze {
+  color: #CD7F32; /* Bronze tone for cultural heritage */
+}
+.chariot-heading {
+  color: #4A148C; /* Royal deep purple */
+  text-shadow: 1px 1px 2px #CE93D8;
+}
+
+.rath-maroon {
+  color: #880E4F; /* Deep maroon - symbolic of the Rath */
+}
+
+.puri-blue {
+  color: #1E88E5; /* Bright puri blue */
+}
+
+.devotion-gold {
+  color: #FFD700; /* Devotion - glowing gold */
+  font-weight: bold;
+}
+
+.blessed-green {
+  color: #2E7D32; /* Green for blessings and life */
+  font-style: italic;
+}
+
+.chant-orange {
+  color: #FF5722; /* High energy orange for chanting */
+  font-weight: bold;
+}
+
+.trance-purple {
+  color: #8E24AA; /* Mystical purple for trance/devotion */
+}
+
+.faith-blue {
+  color: #1976D2; /* Deep blue for faith */
+}
+
+.open-heart {
+  color: #009688; /* Teal for openness and universal love */
+}
+
+.unity-palette {
+  color: #5D4037; /* Earth tone for all kinds of people */
+  font-style: italic;
+}
+
+.diversity-color {
+  color: #FF7043; /* Warm coral to show vibrant unity */
+  font-weight: bold;
+}
+.chariot-structure-heading {
+  color: #BF360C;
+  text-shadow: 1px 1px 1px #FFAB91;
+}
+
+.rath-wood {
+  color: #6D4C41; /* Wood tone */
+  font-weight: bold;
+}
+
+.jagannath-highlight {
+  color: #C62828;
+  font-weight: bold;
+}
+
+.balabhadra-highlight {
+  color: #2E7D32;
+  font-weight: bold;
+}
+
+.subhadra-highlight {
+  color: #6A1B9A;
+  font-weight: bold;
+}
+
+.neem-green {
+  color: #388E3C;
+  font-style: italic;
+}
+
+.chariot-name {
+  font-weight: bold;
+}
+
+.nandighosha {
+  color: #EF5350;
+}
+
+.taladhwaja {
+  color: #43A047;
+}
+
+.darpadalan {
+  color: #8E24AA;
+}
+
+.chariot-red {
+  color: #D32F2F;
+}
+
+.chariot-yellow {
+  color: #FDD835;
+}
+
+.chariot-green {
+  color: #66BB6A;
+}
+
+.chariot-black {
+  color: #212121;
+}
+
+.route-highlight {
+  color: #0277BD;
+  font-weight: bold;
+}
+
+.craftsmen-color {
+  color: #795548;
+  font-style: italic;
+}
+
+.ritual-heading {
+  color: #4A148C;
+  text-shadow: 1px 1px 2px #CE93D8;
+}
+
+.pahandi-highlight {
+  color: #FF6F00;
+  font-weight: bold;
+}
+
+.ritual-sound {
+  color: #6D4C41;
+  font-style: italic;
+}
+
+.king-highlight {
+  color: #3E2723;
+  font-weight: bold;
+}
+
+.chera-highlight {
+  color: #FFD700;
+  font-style: italic;
+}
+
+.devotion-rope {
+  color: #5D4037;
+  font-weight: bold;
+}
+
+.gundicha-highlight {
+  color: #00695C;
+  font-weight: bold;
+}
+
+.bahuda-highlight {
+  color: #1565C0;
+  font-weight: bold;
+}
+.gundicha-highlight {
+  color: #00695C; /* Gundicha Temple green */
+  font-weight: bold;
+}
+
+.festival-highlight {
+  color: #D32F2F; /* Festival red */
+  font-weight: bold;
+}
+
+.moksha-highlight {
+  color: #388E3C; /* Moksha green */
+  font-weight: bold;
+}
+
+.festival-lib-highlight {
+  color: #8E24AA; /* Liberation purple */
+  font-weight: bold;
+}
+.highlight-orange {
+  color: #FF5733;
+}
+
+.highlight-red {
+  color: #C70039;
+}
+.highlight-green {
+  color: #28a745; /* Green */
+  font-weight: bold;
+}
+
+.highlight-orange {
+  color: #FF5733; /* Orange */
+  font-weight: bold;
+}
+
+.highlight-blue {
+  color: #007bff; /* Blue */
+  font-weight: bold;
+}
+
+.highlight-red {
+  color: #dc3545; /* Red */
+  font-weight: bold;
+}
+
+.highlight-purple {
+  color: #6f42c1; /* Purple */
+  font-weight: bold;
+}
+
+.highlight-yellow {
+  color: #ffc107; /* Yellow */
+  font-weight: bold;
+}
+
+.warning-text {
+  font-weight: bold;
+  color: #dc3545; /* Red for warning text */
+}
+
+/* end footer section*/
+/*# sourceMappingURL=style.css.map */
+
+.section-image {
+    margin: 2.5rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    background: #fff;
+    padding-bottom: 1rem;
+}
+
+.section-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+    border-radius: 15px 15px 0 0;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+}
+
+.section-image figcaption {
+    padding: 1rem 1.5rem 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+    text-align: left;
+    font-style: italic;
+}
+
+.section-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.section-image:hover img {
+    transform: scale(1.02);
+}
+
+/* Add a subtle overlay on hover */
+.section-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, 
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 15px 15px 0 0;
+    pointer-events: none;
+}
+
+.section-image:hover::after {
+    opacity: 1;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .section-image {
+        margin: 2rem 0;
+        border-radius: 10px;
+    }
+    
+    .section-image img {
+        border-radius: 10px 10px 0 0;
+    }
+    
+    .section-image::after {
+        border-radius: 10px 10px 0 0;
+    }
+
+    .section-image figcaption {
+        padding: 0.75rem 1rem 0;
+        font-size: 0.85rem;
+    }
+}
+
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3),
+                inset 0 2px 5px rgba(255,255,255,0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 9999;
+    opacity: 0;
+    transform: translateY(20px);
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#back-to-top::before {
+    content: "↑";
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 1;
+    margin-top: -2px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+#back-to-top:hover {
+    background: linear-gradient(145deg, var(--secondary-color), var(--primary-color));
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4),
+                inset 0 2px 5px rgba(255,255,255,0.3);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+#back-to-top:hover::before {
+    transform: translateY(-2px);
+    text-shadow: 0 3px 6px rgba(0,0,0,0.3);
+}
+
+#back-to-top.show {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    #back-to-top {
+        bottom: 25px;
+        right: 25px;
+        width: 45px;
+        height: 45px;
+    }
+    
+    #back-to-top::before {
+        font-size: 24px;
+    }
+}
