@@ -28,7 +28,6 @@
         <meta property="og:title" content="Jagannath Temple Puri - Sacred Char Dham Pilgrimage Site">
         <meta property="og:description" content="Visit the sacred Jagannath Temple in Puri, a revered Char Dham pilgrimage site. Discover temple history, Rath Yatra festival, travel tips & complete visitor's guide.">
         <meta property="og:image" content="{{ asset('images/jagannath-temple.jpg') }}">
-        <meta property="og:url" content="{{ url()->current() }}">
         <meta property="og:type" content="website">
 
         <!-- Twitter Card Meta Tags -->
