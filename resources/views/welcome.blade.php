@@ -1649,10 +1649,17 @@ Experience the devotion, music, and unity as devotees from around the world come
         });
 
         function shareOnWhatsApp() {
-            const text = "🌟 Welcome to the Sacred Puri Rath Yatra 2025! 🌟\n\nJoin us on Friday, June 27, 2025, for the grand celebration of the Puri Rath Yatra. Experience the divine journey of Lord Jagannath, Lord Balabhadra, and Devi Subhadra.\n\nJai Jagannath! 🙏";
+            const text = "🌟 Welcome to the Sacred Puri Rath Yatra 2025! 🌟\n\n" +
+                        "Join us on Friday, June 27, 2025, for the grand celebration of the Puri Rath Yatra. " +
+                        "Experience the divine journey of Lord Jagannath, Lord Balabhadra, and Devi Subhadra.\n\n" +
+                        "Jai Jagannath! 🙏\n\n" +
+                        "Share this amazing event with your friends and family!";
+            
             const url = window.location.href;
-            const shareUrl = `https://wa.me/?text=${encodeURIComponent(text + "\n\n" + url)}`;
-            window.open(shareUrl, '_blank');
+            const shareUrl = `https://web.whatsapp.com/send?text=${encodeURIComponent(text + "\n\n" + url)}`;
+            
+            // Open WhatsApp Web
+            window.location.href = shareUrl;
         }
         </script>
     </body>
