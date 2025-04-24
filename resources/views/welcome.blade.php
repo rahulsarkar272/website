@@ -8,9 +8,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- Site Metas -->
         <meta name="keywords" content="Jagannath Puri, Char Dham, Temple, Pilgrimage, Odisha, India">
-        <meta name="description" content="Explore the sacred Jagannath Temple in Puri, one of the Char Dham pilgrimage sites in India. Learn about its history, significance, and plan your visit.">
+        <meta name="description" content="Visit the sacred Jagannath Temple in Puri, a revered Char Dham pilgrimage site. Discover temple history, Rath Yatra festival, travel tips, accommodation & complete visitor's guide. Plan your spiritual journey today!">
         <meta name="author" content="Jay Jagannath">
-        <title>Jay Jagannath - Sacred Temple of Puri</title>
+        <title>Jagannath Temple Puri - Sacred Char Dham Pilgrimage Site | Official Guide</title>
         <!-- slider stylesheet -->
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css">
         <!-- font awesome stylesheet -->
@@ -23,8 +23,296 @@
         <link href="{{ asset('css/style.css') }}" rel="stylesheet">
         <!-- responsive style -->
         <link href=" {{ asset('css/responsive.css') }}" rel="stylesheet">
+
+        <!-- Open Graph Meta Tags for better social sharing -->
+        <meta property="og:title" content="Jagannath Temple Puri - Sacred Char Dham Pilgrimage Site">
+        <meta property="og:description" content="Visit the sacred Jagannath Temple in Puri, a revered Char Dham pilgrimage site. Discover temple history, Rath Yatra festival, travel tips & complete visitor's guide.">
+        <meta property="og:image" content="{{ asset('images/jagannath-temple.jpg') }}">
+        <meta property="og:url" content="{{ url()->current() }}">
+        <meta property="og:type" content="website">
+
+        <!-- Twitter Card Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Jagannath Temple Puri - Sacred Char Dham Pilgrimage Site">
+        <meta name="twitter:description" content="Visit the sacred Jagannath Temple in Puri, a revered Char Dham pilgrimage site. Plan your spiritual journey today!">
+        <meta name="twitter:image" content="{{ asset('images/jagannath-temple.jpg') }}">
+
+        <!-- Additional SEO Meta Tags -->
+        <meta name="robots" content="index, follow">
+        <meta name="canonical" content="{{ url()->current() }}">
+        <meta name="language" content="English">
+        <meta name="revisit-after" content="7 days">
+        <meta name="geo.region" content="IN-OR">
+        <meta name="geo.placename" content="Puri">
+        <meta name="geo.position" content="19.8135;85.8312">
+
+        <!-- Add preload for critical resources -->
+        <link rel="preload" href="{{ asset('css/bootstrap.css') }}" as="style">
+        <link rel="preload" href="{{ asset('js/script.js') }}" as="script">
+
+        <!-- Welcome Popup Styles -->
+        <style>
+        /* Welcome Popup Styles */
+        .welcome-popup {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .welcome-popup-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 400px;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            animation: slideIn 0.4s ease-out;
+        }
+
+        .close-popup {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            font-size: 28px;
+            cursor: pointer;
+            color: #666;
+            transition: color 0.3s;
+        }
+
+        .close-popup:hover {
+            color: #000;
+        }
+
+        .welcome-popup h2 {
+            color: #c7590e;
+            margin-bottom: 15px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .popup-icon {
+            width: 60px;
+            height: 60px;
+            display: block;
+            margin: 0 auto 15px;
+        }
+
+        .popup-body {
+            text-align: center;
+        }
+
+        .popup-body p {
+            color: #444;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .popup-highlights {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+            text-align: left;
+            display: inline-block;
+        }
+
+        .popup-highlights li {
+            margin: 8px 0;
+            color: #666;
+            font-size: 13px;
+        }
+
+        .popup-buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .explore-btn {
+            background-color: #c7590e;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .whatsapp-share {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .whatsapp-share:hover {
+            background-color: #128C7E;
+        }
+
+        .whatsapp-share i {
+            font-size: 16px;
+        }
+
+        .dont-show {
+            display: block;
+            color: #666;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .dont-show input {
+            margin-right: 5px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .welcome-popup-content {
+                margin: 20% auto;
+                padding: 20px;
+                width: 95%;
+            }
+            
+            .welcome-popup h2 {
+                font-size: 20px;
+            }
+            
+            .popup-icon {
+                width: 140px;
+                height: 120px;
+            }
+        }
+
+        /* Floating WhatsApp Share Button */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 80px;  /* Position above the back-to-top button */
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 999;  /* Just below the back-to-top button */
+        }
+
+        .floating-whatsapp:hover {
+            background-color: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .floating-whatsapp i {
+            font-size: 16px;
+        }
+
+        /* Back to top button adjustments */
+        #back-to-top {
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        /* Responsive positions */
+        @media (max-width: 768px) {
+            .floating-whatsapp {
+                bottom: 70px;
+                right: 15px;
+                padding: 8px 15px;
+                font-size: 13px;
+            }
+            .floating-whatsapp i {
+                font-size: 15px;
+            }
+            #back-to-top {
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .floating-whatsapp {
+                bottom: 65px;
+                right: 12px;
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+            .floating-whatsapp i {
+                font-size: 14px;
+            }
+            #back-to-top {
+                bottom: 12px;
+                right: 12px;
+            }
+        }
+        </style>
     </head>
     <body>
+        <!-- Floating WhatsApp Share Button -->
+        <button class="floating-whatsapp" onclick="shareOnWhatsApp()">
+            <i class="fab fa-whatsapp"></i> Share Rath Yatra
+        </button>
+
+        <!-- Welcome Popup -->
+        <div id="welcomePopup" class="welcome-popup">
+            <div class="welcome-popup-content">
+                <span class="close-popup">&times;</span>
+                <div class="popup-body">
+                    <img src="{{ asset('images/temple-icon.png') }}" alt="Jagannath Temple Icon" class="popup-icon">
+                    <p>🌟 Welcome to the Sacred Puri Rath Yatra 2025! 🌟</p>
+                    <p>Join us on Friday, June 27, 2025, for the grand celebration of the Puri Rath Yatra, a vibrant festival where the deities Lord Jagannath, Lord Balabhadra, and Devi Subhadra journey from the Jagannath Temple to the Gundicha Temple on majestic chariots. ​
+
+Experience the devotion, music, and unity as devotees from around the world come together to witness this magnificent procession.</p>
+                    <p>Jai Jagannath! 🙏</p>
+                    <p>Let the divine journey begin!</p>
+                    <div class="popup-buttons">
+                        <button class="explore-btn">Start Exploring</button>
+                        <button class="whatsapp-share" onclick="shareOnWhatsApp()">
+                            <i class="fab fa-whatsapp"></i> Share
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="hero_area">
             <!-- header section starts -->
             <header class="header_section">
@@ -320,7 +608,7 @@
                                 <h2 class="section-title" id="architecture">🏛️ Architecture and Unique Features of Jagannath Temple, Puri</h2>
                                 <div class="section-image">
                                     <figure>
-                                        <img src="images/temple-architecture.png" alt="Jagannath Temple Architecture" class="img-fluid">
+                                        <img src="images/temple-architecture.png" alt="Jagannath Temple Puri Architecture - Ancient Kalinga Style Design" class="img-fluid">
                                         <figcaption>The magnificent architecture of Jagannath Temple showcasing its intricate Kalinga-style design and spiritual significance.</figcaption>
                                     </figure>
                                 </div>
@@ -1265,13 +1553,6 @@
                         </ul>
                             </div>
                     <div class="col-md-4">
-                        <h4>Contact Information</h4>
-                        <ul class="footer-contact">
-                            <li><i class="fas fa-map-marker-alt"></i> Grand Road, Puri, Odisha 752002, India</li>
-                            <li><i class="fas fa-phone"></i> +91 675 222 0207</li>
-                            <li><i class="fas fa-envelope"></i> info@jagannathtemplepuri.com</li>
-                            <li><i class="fas fa-clock"></i> Temple Timings: 5:00 AM - 11:30 PM</li>
-                        </ul>
                         <div class="social-links">
                             <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
                             <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
@@ -1297,5 +1578,82 @@
         <script type="text/javascript" src="js/script.js"></script>
         <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
         
+        <!-- Add schema markup for better search engine understanding -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "TouristAttraction",
+          "name": "Jagannath Temple Puri",
+          "description": "Sacred Hindu temple and one of the Char Dham pilgrimage sites in India",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Grand Road",
+            "addressLocality": "Puri",
+            "addressRegion": "Odisha",
+            "postalCode": "752001",
+            "addressCountry": "IN"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "19.8135",
+            "longitude": "85.8312"
+          },
+          "openingHours": "Mo-Su 05:00-23:30"
+        }
+        </script>
+
+        <!-- Add lazy loading for images -->
+        <img src="images/temple-view.jpg" loading="lazy" alt="Jagannath Temple Puri Front View">
+
+        <!-- Welcome Popup functionality -->
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const popup = document.getElementById('welcomePopup');
+            const closeBtn = document.querySelector('.close-popup');
+            const exploreBtn = document.querySelector('.explore-btn');
+            const whatsappBtn = document.querySelector('.whatsapp-share');
+            const dontShowCheckbox = document.getElementById('dontShowAgain');
+
+            // Check if user has previously chosen to not show the popup
+            if (!localStorage.getItem('dontShowWelcome')) {
+                // Show popup after a short delay
+                setTimeout(() => {
+                    popup.style.display = 'block';
+                }, 1000);
+            }
+
+            // Close popup functions
+            function closePopup() {
+                popup.style.display = 'none';
+                if (dontShowCheckbox.checked) {
+                    localStorage.setItem('dontShowWelcome', 'true');
+                }
+            }
+
+            // Event listeners
+            closeBtn.addEventListener('click', closePopup);
+            exploreBtn.addEventListener('click', closePopup);
+            whatsappBtn.addEventListener('click', closePopup);
+
+            // Close if clicking outside the popup
+            popup.addEventListener('click', function(e) {
+                if (e.target === popup) {
+                    closePopup();
+                }
+            });
+
+            // Prevent popup from closing when clicking inside
+            document.querySelector('.welcome-popup-content').addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        });
+
+        function shareOnWhatsApp() {
+            const text = "🌟 Welcome to the Sacred Puri Rath Yatra 2025! 🌟\n\nJoin us on Friday, June 27, 2025, for the grand celebration of the Puri Rath Yatra. Experience the divine journey of Lord Jagannath, Lord Balabhadra, and Devi Subhadra.\n\nJai Jagannath! 🙏";
+            const url = window.location.href;
+            const shareUrl = `https://wa.me/?text=${encodeURIComponent(text + "\n\n" + url)}`;
+            window.open(shareUrl, '_blank');
+        }
+        </script>
     </body>
 </html>
